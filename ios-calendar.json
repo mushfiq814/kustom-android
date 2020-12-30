@@ -1,0 +1,1653 @@
+##KUSTOMCLIP##
+{
+  "clip_version": 1,
+  "clip_cut": [],
+  "clip_modules": [
+    {
+      "internal_type": "KomponentModule",
+      "globals_list": {
+        "month": {
+          "index": 1,
+          "type": "TEXT",
+          "title": "month",
+          "description": "",
+          "global_formula": "",
+          "value": "$df(\"M\")$"
+        },
+        "year": {
+          "index": 2,
+          "type": "TEXT",
+          "title": "year",
+          "description": "",
+          "global_formula": "",
+          "value": "$df(\"y\")$"
+        },
+        "firstdat": {
+          "index": 3,
+          "type": "TEXT",
+          "title": "firstDat",
+          "description": "date of first of month",
+          "global_formula": "",
+          "value": "$dp(gv(year)+y+gv(month)+M1d0h0m0s)$"
+        },
+        "firstday": {
+          "index": 4,
+          "type": "TEXT",
+          "title": "firstDay",
+          "description": "day of week for first of month",
+          "global_formula": "",
+          "value": "$df(\"e\", gv(firstDat))$"
+        },
+        "lastdate": {
+          "index": 5,
+          "type": "TEXT",
+          "title": "lastDate",
+          "description": "date of last of month",
+          "global_formula": "",
+          "value": "$dp(gv(year)+y+gv(month)+M1d0h0m0sa1Mr1d)$"
+        },
+        "days": {
+          "index": 6,
+          "type": "TEXT",
+          "title": "days",
+          "description": "",
+          "global_formula": "",
+          "value": "S,M,T,W,R,F,S"
+        },
+        "font": {
+          "index": 7,
+          "type": "FONT",
+          "title": "font",
+          "description": "",
+          "global_formula": "",
+          "value": "kfile://org.kustom.provider/fonts/SF-Pro-Display-Medium.otf"
+        }
+      },
+      "viewgroup_items": [
+        {
+          "internal_title": "calendar-container",
+          "internal_type": "StackLayerModule",
+          "viewgroup_items": [
+            {
+              "internal_type": "TextModule",
+              "text_expression": "$df(\"MMMM, Y\", gv(firstDat))$",
+              "internal_toggles": {
+                "text_family": 100
+              },
+              "internal_globals": {
+                "text_family": "font"
+              },
+              "internal_title": "date",
+              "text_size_type": "FIXED_WIDTH",
+              "text_size": 18.0,
+              "text_width": 140.0,
+              "text_lines": 1.0,
+              "position_padding_bottom": 3.0
+            },
+            {
+              "internal_type": "StackLayerModule",
+              "config_stacking": "HORIZONTAL_CENTER",
+              "internal_title": "daynames",
+              "viewgroup_items": [
+                {
+                  "internal_type": "OverlapLayerModule",
+                  "viewgroup_items": [
+                    {
+                      "internal_toggles": {
+                        "shape_type": 0,
+                        "paint_color": 10
+                      },
+                      "internal_formulas": {
+                        "shape_type": "",
+                        "paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+                      },
+                      "internal_type": "ShapeModule",
+                      "shape_type": "RECT"
+                    },
+                    {
+                      "internal_type": "TextModule",
+                      "text_expression": "$tc(split, gv(days), \",\", si(mindex,1))$",
+                      "paint_color": "#FFFFFDFD",
+                      "fx_shadow_blur": 1,
+                      "fx_shadow": "OUTER",
+                      "fx_shadow_distance": 1.0,
+                      "text_size_type": "FIXED_WIDTH",
+                      "text_size": 13.0,
+                      "text_width": 20.0,
+                      "text_lines": 1.0,
+                      "text_align": "CENTER",
+                      "internal_toggles": {
+                        "text_family": 100
+                      },
+                      "internal_globals": {
+                        "text_family": "font"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "internal_type": "OverlapLayerModule",
+                  "viewgroup_items": [
+                    {
+                      "internal_toggles": {
+                        "shape_type": 0,
+                        "paint_color": 10
+                      },
+                      "internal_formulas": {
+                        "shape_type": "",
+                        "paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+                      },
+                      "internal_type": "ShapeModule",
+                      "shape_type": "RECT"
+                    },
+                    {
+                      "internal_type": "TextModule",
+                      "text_expression": "$tc(split, gv(days), \",\", si(mindex,1))$",
+                      "paint_color": "#FFFFFDFD",
+                      "fx_shadow_blur": 1,
+                      "fx_shadow": "OUTER",
+                      "fx_shadow_distance": 1.0,
+                      "text_size_type": "FIXED_WIDTH",
+                      "text_size": 13.0,
+                      "text_width": 20.0,
+                      "text_lines": 1.0,
+                      "text_align": "CENTER",
+                      "internal_toggles": {
+                        "text_family": 100
+                      },
+                      "internal_globals": {
+                        "text_family": "font"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "internal_type": "OverlapLayerModule",
+                  "viewgroup_items": [
+                    {
+                      "internal_toggles": {
+                        "shape_type": 0,
+                        "paint_color": 10
+                      },
+                      "internal_formulas": {
+                        "shape_type": "",
+                        "paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+                      },
+                      "internal_type": "ShapeModule",
+                      "shape_type": "RECT"
+                    },
+                    {
+                      "internal_type": "TextModule",
+                      "text_expression": "$tc(split, gv(days), \",\", si(mindex,1))$",
+                      "paint_color": "#FFFFFDFD",
+                      "fx_shadow_blur": 1,
+                      "fx_shadow": "OUTER",
+                      "fx_shadow_distance": 1.0,
+                      "text_size_type": "FIXED_WIDTH",
+                      "text_size": 13.0,
+                      "text_width": 20.0,
+                      "text_lines": 1.0,
+                      "text_align": "CENTER",
+                      "internal_toggles": {
+                        "text_family": 100
+                      },
+                      "internal_globals": {
+                        "text_family": "font"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "internal_type": "OverlapLayerModule",
+                  "viewgroup_items": [
+                    {
+                      "internal_toggles": {
+                        "shape_type": 0,
+                        "paint_color": 10
+                      },
+                      "internal_formulas": {
+                        "shape_type": "",
+                        "paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+                      },
+                      "internal_type": "ShapeModule",
+                      "shape_type": "RECT"
+                    },
+                    {
+                      "internal_type": "TextModule",
+                      "text_expression": "$tc(split, gv(days), \",\", si(mindex,1))$",
+                      "paint_color": "#FFFFFDFD",
+                      "fx_shadow_blur": 1,
+                      "fx_shadow": "OUTER",
+                      "fx_shadow_distance": 1.0,
+                      "text_size_type": "FIXED_WIDTH",
+                      "text_size": 13.0,
+                      "text_width": 20.0,
+                      "text_lines": 1.0,
+                      "text_align": "CENTER",
+                      "internal_toggles": {
+                        "text_family": 100
+                      },
+                      "internal_globals": {
+                        "text_family": "font"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "internal_type": "OverlapLayerModule",
+                  "viewgroup_items": [
+                    {
+                      "internal_toggles": {
+                        "shape_type": 0,
+                        "paint_color": 10
+                      },
+                      "internal_formulas": {
+                        "shape_type": "",
+                        "paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+                      },
+                      "internal_type": "ShapeModule",
+                      "shape_type": "RECT"
+                    },
+                    {
+                      "internal_type": "TextModule",
+                      "text_expression": "$tc(split, gv(days), \",\", si(mindex,1))$",
+                      "paint_color": "#FFFFFDFD",
+                      "fx_shadow_blur": 1,
+                      "fx_shadow": "OUTER",
+                      "fx_shadow_distance": 1.0,
+                      "text_size_type": "FIXED_WIDTH",
+                      "text_size": 13.0,
+                      "text_width": 20.0,
+                      "text_lines": 1.0,
+                      "text_align": "CENTER",
+                      "internal_toggles": {
+                        "text_family": 100
+                      },
+                      "internal_globals": {
+                        "text_family": "font"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "internal_type": "OverlapLayerModule",
+                  "viewgroup_items": [
+                    {
+                      "internal_toggles": {
+                        "shape_type": 0,
+                        "paint_color": 10
+                      },
+                      "internal_formulas": {
+                        "shape_type": "",
+                        "paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+                      },
+                      "internal_type": "ShapeModule",
+                      "shape_type": "RECT"
+                    },
+                    {
+                      "internal_type": "TextModule",
+                      "text_expression": "$tc(split, gv(days), \",\", si(mindex,1))$",
+                      "paint_color": "#FFFFFDFD",
+                      "fx_shadow_blur": 1,
+                      "fx_shadow": "OUTER",
+                      "fx_shadow_distance": 1.0,
+                      "text_size_type": "FIXED_WIDTH",
+                      "text_size": 13.0,
+                      "text_width": 20.0,
+                      "text_lines": 1.0,
+                      "text_align": "CENTER",
+                      "internal_toggles": {
+                        "text_family": 100
+                      },
+                      "internal_globals": {
+                        "text_family": "font"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "internal_type": "OverlapLayerModule",
+                  "viewgroup_items": [
+                    {
+                      "internal_toggles": {
+                        "shape_type": 0,
+                        "paint_color": 10
+                      },
+                      "internal_formulas": {
+                        "shape_type": "",
+                        "paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+                      },
+                      "internal_type": "ShapeModule",
+                      "shape_type": "RECT"
+                    },
+                    {
+                      "internal_type": "TextModule",
+                      "text_expression": "$tc(split, gv(days), \",\", si(mindex,1))$",
+                      "paint_color": "#FFFFFDFD",
+                      "fx_shadow_blur": 1,
+                      "fx_shadow": "OUTER",
+                      "fx_shadow_distance": 1.0,
+                      "text_size_type": "FIXED_WIDTH",
+                      "text_size": 13.0,
+                      "text_width": 20.0,
+                      "text_lines": 1.0,
+                      "text_align": "CENTER",
+                      "internal_toggles": {
+                        "text_family": 100
+                      },
+                      "internal_globals": {
+                        "text_family": "font"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "internal_title": "dates",
+              "internal_type": "StackLayerModule",
+              "viewgroup_items": [
+								{
+									"internal_type": "StackLayerModule",
+									"config_stacking": "HORIZONTAL_CENTER",
+									"internal_title": "row1",
+									"viewgroup_items": [
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										}
+									]
+								},
+								{
+									"internal_type": "StackLayerModule",
+									"config_stacking": "HORIZONTAL_CENTER",
+									"internal_title": "row1",
+									"viewgroup_items": [
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										}
+									]
+								},
+								{
+									"internal_type": "StackLayerModule",
+									"config_stacking": "HORIZONTAL_CENTER",
+									"internal_title": "row1",
+									"viewgroup_items": [
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										}
+									]
+								},
+								{
+									"internal_type": "StackLayerModule",
+									"config_stacking": "HORIZONTAL_CENTER",
+									"internal_title": "row1",
+									"viewgroup_items": [
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										}
+									]
+								},
+								{
+									"internal_type": "StackLayerModule",
+									"config_stacking": "HORIZONTAL_CENTER",
+									"internal_title": "row1",
+									"viewgroup_items": [
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										},
+										{
+											"internal_type": "OverlapLayerModule",
+											"viewgroup_items": [
+												{
+													"internal_toggles": {
+														"shape_type": 0,
+														"paint_color": 10
+													},
+													"internal_formulas": {
+														"shape_type": "",
+														"paint_color": "$cm(255,\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1),\n255*si(mindex,1)/si(mcount,1)\n)$"
+													},
+													"internal_type": "ShapeModule",
+													"shape_type": "RECT"
+												},
+												{
+													"internal_type": "TextModule",
+													"text_expression": "$if(\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2 \u003e gv(firstDay)\n  \u0026\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay) \u003c\u003d df(\"d\",gv(lastDate)),\n  si(mindex,2)*si(mcount,1)+si(mindex,1)+2-gv(firstDay),\n\"\")$",
+													"paint_color": "#FFFFFDFD",
+													"fx_shadow_blur": 1,
+													"fx_shadow": "OUTER",
+													"fx_shadow_distance": 1.0,
+													"text_size_type": "FIXED_WIDTH",
+													"text_size": 13.0,
+													"text_width": 20.0,
+													"text_lines": 1.0,
+													"text_align": "CENTER",
+													"internal_toggles": {
+														"text_family": 100
+													},
+													"internal_globals": {
+														"text_family": "font"
+													}
+												}
+											]
+										}
+									]
+								}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+##KUSTOMCLIP##
